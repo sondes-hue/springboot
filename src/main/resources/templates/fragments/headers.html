@@ -7,7 +7,7 @@
 
     <div class="headerBox" th:fragment="clientHeader">
         <div class="logo">
-            <img height="50px" style="margin-top: 2px" src="../images/logoo.png"></img>
+            <img height="50px" src="../images/logoo.png"></img>
         </div>
         <div class="header">
             <ul>
@@ -39,7 +39,7 @@
 
     <div class="headerBox" th:fragment="adminHeader">
         <div class="logo">
-            <img height="50px" style="margin-top: 2px" src="../images/logoo.png"></img>
+            <img height="50px" src="../images/logoo.png"></img>
         </div>
         <div class="header">
             <ul>
@@ -65,26 +65,26 @@
 
     <div class="headerBox" th:fragment="homeHeader">
         <div class="logo">
-            <img height="50px" style="margin-top: 2px" src="../images/logoo.png"></img>
+            <img height="50px" src="../images/logoo.png"></img>
         </div>
         <div class="header">
             <ul style="margin-right: 20px">
                 <li>
-                    <input type="radio" id="homeC" name="homeHeader">
-                    <label for="homeC" id="homeCLabel">
-                        <a>Home</a>
-                    </label>
-                </li>
-                <li>
-                    <input type="radio" id="connection" name="homeHeader">
-                    <label for="connection" id="connectionLabel">
-                        <a>Books</a>
-                    </label>
-                </li>
-                <li>
                     <input type="radio" id="aboutUs" name="homeHeader">
                     <label for="aboutUs" id="aboutUsLabel">
-                        <a>Books</a>
+                        <a href="#aboutUsSection">About Us</a>
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" id="connect" name="homeHeader">
+                    <label for="connect" id="connectLabel">
+                        <a href="#loginBox">Connect</a>
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" id="homeC" name="homeHeader" checked>
+                    <label for="homeC" id="homeCLabel">
+                        <a href="#home">Home</a>
                     </label>
                 </li>
             </ul>

@@ -3,36 +3,38 @@
     background-color: var(--white);
     position: relative;
     box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
-    border-radius: 20px;
+    border-radius: 10px;
 }
 .header{
     width: fit-content;
     margin-right: 0px;
     margin-left: auto;
-    padding: 2px;
+    height: fit-content;
 }
 .header ul{
     display: flex;
     list-style: none;
     gap: 15px;
+    padding: 13px;
 }
-.header ul li label{
+.header ul li label a{
+    text-decoration: none;
     color: var(--darkGreenColor);
-    padding: 3px 15px;
+    padding: 3px 15px 5px 15px;
     border-radius: 5px;
     transition: .3s;
     cursor: pointer;
 }
-.header ul li label:hover{
+.header ul li label a:hover{
     background-color: var(--lightGreenColor);
     color: var(--darkGreenColor);
 }
 .header ul li input{
     display: none;
 }
-.header ul li input:checked ~ label{
-    border-radius: 0px;
-    border-bottom: 2px solid var(--darkGreenColor);
+.header ul li input:checked ~ label a{
+    background-color: var(--darkGreenColor);
+    color: var(--white);
 }
 .header ul li .profile{
     height: 30px;
@@ -45,4 +47,26 @@
     position: absolute;
     height: 100%;
     left: 30px;
+}
+.navBar{
+    position: fixed;
+    top: 0px;
+    padding: 10px;
+    z-index: 1;
+    min-width: 100%;
+    transition: .3s;
+}
+.navBarOnTop{
+    padding: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-radius: 0px;
+}
+.navBarOnTop .headerBox{
+    border-radius: 0px;
+    box-shadow: none;
+}
+.homeText .btn{
+    width: 100%;
+    text-align: center;
 }
