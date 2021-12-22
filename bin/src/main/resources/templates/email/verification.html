@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,100&display=swap');
+        .body{
+            background-color: #fdfdfd;
+            padding: 20px;
+            border-radius: 20px;
+            font-family: 'Lato', sans-serif;
+            text-align: center;
+        }
+        .name{
+            color: #303030;
+            text-align: left;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .afterReg{
+            margin-left: 12.5%;
+            max-width: 75%;
+            min-width: 75%;
+            margin-top: 15px;
+            font-size: 20px;
+            color: #303030;
+            font-weight: 500;
+        }
+        .afterReg a,.afterReg a:hover{
+            text-decoration: none;
+            color: #46c762;
+        }
+        .toContinue{
+            margin-top: 10px;
+            color: #9f9f9f;
+        }
+        .code{
+            margin: 30px auto;
+            color: #fff;
+            background-color: #46c762;
+            font-size: 20px;
+            font-weight: 600;
+            padding: 2px 30px;
+            border-radius: 5px;
+            width: fit-content;
+            letter-spacing: 7px;
+        }
+        .image img{
+            margin: 20px 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+        .welcome{
+            letter-spacing: 4px;
+            margin: 20px;
+            color: #303030;
+        }
+        .logo{
+            margin: 20px;
+        }
+        .hr{
+            margin: 0px 30px;
+            color: #f6f6f6;
+        }
+    </style>
+</head>
+<body>
+    <div class="body">
+        <div class="name">
+            Hello <span th:text="${name}">name</span>,
+        </div>
+        <div class="image">
+            <img height="35" src="https://i.ibb.co/SKbTBdg/email-verif.png">
+        </div>
+        <div class="afterReg">
+            After registering at <a href="http://localhost:8080/home#loginBox">Book Land</a>, you received this email so that we can verify that you are the owner.
+        </div>
+        <div class="toContinue">
+            To continue using your account, please enter the verification code below
+        </div>
+        <div class="code" th:text="${code}">code</div>
+        <hr class="hr">
+        <div class="welcome">
+            Welcome to our land !
+        </div>
+        <img class="logo" height="60" src="https://i.ibb.co/Y29d4jx/Logo.png">
+    </div>
+</body>
+</html>

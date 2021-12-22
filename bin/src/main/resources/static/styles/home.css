@@ -1,0 +1,253 @@
+.loginBox, .signUpBox{
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    width: 60%;
+    margin: 50px 20%;
+    background-color: var(--white);
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+}
+.signUpBox{
+    margin-top: 150px;
+    padding: 30px;
+}
+.signUpBox .row{
+    margin: 30px 10px;
+}
+.loginBox .form{
+    margin: 50px 0px;
+    width: 45%;
+    padding: 20px;
+}
+.loginBox .image{
+    overflow: hidden;
+    position: absolute;
+    background-color: red;
+    width: 55%;
+    right: 0px;
+    top: 0px;
+}
+.loginBox .image img {
+    margin-left: -170px;
+}
+.loginBox .title{
+    text-align: center;
+    color: var(--darkGreenColor);
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+button, .homeText a, input[type=submit], input[type=reset]{
+    background-color: var(--darkGreenColor);
+    border-radius: 5px !important;
+    width: 100%;
+    padding: 5px;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    color: var(--white);
+    margin: 5px 10px;
+}
+.orLine{
+    margin: 15px 0px;
+    position: relative;
+    color: var(--gray);
+}
+.orLine .or{
+    text-align: center;
+}
+.orLine .or::after, .orLine .or::before{
+    content: '';
+    width: 100px;
+    height: 1px;
+    background-color: var(--gray);
+    position: absolute;
+    top: 13px;
+}
+.orLine .or::before{
+    left: 40px;
+}
+.orLine .or::after{
+    right: 40px;
+}
+.textLink a{
+    text-decoration: none;
+    color:var(--gary2);
+    cursor: pointer;
+}
+.textLink a:hover{
+    color:var(--gary2);
+}
+.textLink{
+    margin-top: 25px;
+}
+.homeText{
+    position: absolute;
+    left: 60px;
+    top: 300px;
+    font-size: 40px;
+}
+.homeText .text1{
+    font-weight: 200;
+}
+.homeText .text2{
+    font-weight: 700;
+}
+.homeText .text3{
+    font-size: 24px;
+    color: var(--gary2);
+    margin-top: 50px;
+    font-weight: 100;
+    text-align: center;
+}
+.homeText a{
+    text-decoration: none;
+    font-size: 20px;
+    width: fit-content;
+    border-radius: 30px !important;
+    padding: 4px 50px;
+    padding: 3px 50px 6px 50px;
+}
+.homeText a:hover{
+    color: var(--white);
+}
+.onTop .book{
+    cursor: default;
+    padding: 20px;
+    position: relative;
+    width: 230px;
+    height: 500px;
+    border-radius: 20px;
+    background-color: var(--purpleColor);
+}
+.onTop .sectionTitle{
+    text-align: right;
+    font-size: 25px;
+    font-weight: 600;
+    margin: 80px 40px 35px 0px;
+    color: var(--purpleColor);
+}
+.onTop .book .image{
+    position: absolute;
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+    top: -30px;
+    left: -30px;
+    background-color: red;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+.onTop .book .rank{
+    margin-top: 170px;
+    text-align: right;
+    font-size: 40px;
+    font-weight: 600;
+}
+.onTop .book .title{
+    text-align: left;
+    font-size: 25px;
+    font-weight: 500;
+}
+.onTop .book .description{
+    font-size: 20px;
+    font-weight: 200;
+}
+.onTop .book:nth-child(2){
+    margin-left: auto;
+    margin-right: 40px;
+    margin-top: 40px;
+    color: var(--white);
+}
+.onTop .book:nth-child(3){
+    color: var(--white);
+    margin-left: auto;
+    margin-right: 340px;
+    margin-top: -300px;
+    background-color: var(--purpleColor2);
+}
+.onTop .book:nth-child(4){
+    color: var(--black);
+    margin-left: auto;
+    margin-right: 640px;
+    margin-top: -300px;
+    background-color: var(--purpleColor3);
+}
+.bigTitle{
+    color: var(--darkGreenColor);
+    font-size: 60px;
+    margin: 30px 60px;
+    text-align: right;
+    font-weight: 600;
+}
+.aboutUs .contact{
+    position: relative;
+    background-color: var(--contactColor);
+}
+.aboutUs .contact .title{
+    color: var(--white);
+    text-align: center;
+    padding-top: 30px;
+    font-size: 30px;
+    font-weight: 600;
+}
+.aboutUs .contact ul{
+    color: var(--white);
+    margin: 0px;
+    padding: 40px 20px;
+    text-align: center;
+    list-style: none;
+    display: flex;
+    align-content: space-between;
+}
+.aboutUs .contact ul li{
+    width: 33.33%;
+}
+.aboutUs .contact ul li i{
+    font-size: 30px;
+}
+.aboutUs .contact ul li .info{
+    margin-top:15px;
+    font-size: 20px;
+}
+.aboutUs .description{
+    margin-left: auto;
+    margin-right: 40px;
+    width: 60%;
+    padding: 40px;
+    text-align: center;
+}
+.aboutUs .contact .image{
+    width: 100%;
+    position: absolute;
+    top: 0px;
+}
+.aboutUs .contact .image img{
+    top: -240px;
+    position: absolute;
+    height: 250px;
+    left: 40px;
+}
+.homeText img{
+    margin-top: 80px;
+    height: 100px;
+}
+.signUpBox .buttons{
+    margin-top: 50px;
+    display: flex;
+}
+.signUpBox .buttons input:nth-child(2){
+    margin-left: auto;
+    margin-right: 0px;
+}
+.signUpBox .title{
+    font-weight: 600;
+    color: var(--darkGreenColor);
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+input[type=submit], input[type=reset]{
+    padding: 5px 50px;
+    width: fit-content;
+    border-radius: 30px !important;
+}
