@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Roboto&display=swap');
+:root{
+    --darkGreenColor:#46c762;
+    --lightGreenColor: #e8f8ec;
+    --backgroundColor:#faf6f4;
+    --white:#fff;
+    --gray:#bababc;
+    --gary2:#c0bfc1;
+    --purpleColor:#8946CD;
+    --purpleColor2:#BDA5DB;
+    --purpleColor3:#E0D3EB;
+    --black:#000;
+    --contactColor:#838E76;
+    --inputBorderColor:#dbe0e4;
+    --inputTextColor:#6d757d;
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+    background-color: var(--backgroundColor);
+    font-family: 'Roboto', sans-serif;
+}
+input:focus{
+    border-color: rgba(126, 239, 104, 0.8) !important;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6) !important;
+    outline: 0 none !important;
+}
+.date{
+    width: 100%;
+    outline: none;
+    border: 1px solid var(--inputBorderColor);
+    color: var(--inputTextColor);
+    height: 35px;
+    border-radius: 5px;
+}

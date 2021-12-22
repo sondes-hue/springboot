@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+
+    <div class="headerBox" th:fragment="clientHeader">
+        <div class="logo">
+            <img height="50px" src="../images/logoo.png"></img>
+        </div>
+        <div class="header">
+            <ul>
+                <li>
+                    <input type="radio" id="invoice" name="clientHeader">
+                    <label for="invoice" id="invoiceLabel">
+                        <a>Invoice</a>
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" id="categories" name="clientHeader">
+                    <label for="categories" id="categoriesLabel">
+                        <a>Categories</a>
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" id="books" name="clientHeader">
+                    <label for="books" id="booksLabel">
+                        <a>Books</a>
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" id="home" name="clientHeader">
+                    <label class="profile" for="home" id="homeLabel"></label>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="headerBox" th:fragment="adminHeader">
+        <div class="logo">
+            <img height="50px" src="../images/logoo.png"></img>
+        </div>
+        <div class="header">
+            <ul>
+                <li>
+                    <input type="radio" id="categoriesA" name="adminHeader">
+                    <label for="categoriesA" id="categoriesALabel">
+                        <a>Categories</a>
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" id="booksA" name="adminHeader">
+                    <label for="booksA" id="booksALabel">
+                        <a>Books</a>
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" id="homeA" name="adminHeader">
+                    <label class="profile" for="homeA" id="homeALabel"></label>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="headerBox" th:fragment="homeHeader">
+        <div class="logo">
+            <img height="50px" src="../images/logoo.png"></img>
+        </div>
+        <div class="header">
+            <ul style="margin-right: 20px">
+                <li>
+                    <input type="radio" id="aboutUs" name="homeHeader">
+                    <label for="aboutUs" id="aboutUsLabel">
+                        <a href="#aboutUsSection">About Us</a>
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" id="connect" name="homeHeader">
+                    <label for="connect" id="connectLabel">
+                        <a href="#loginBox">Connect</a>
+                    </label>
+                </li>
+                <li>
+                    <input type="radio" id="homeC" name="homeHeader" checked>
+                    <label for="homeC" id="homeCLabel">
+                        <a href="#home">Home</a>
+                    </label>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
