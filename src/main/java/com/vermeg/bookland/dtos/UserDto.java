@@ -1,11 +1,11 @@
-package com.vermeg.bookland.Dtos;
+package com.vermeg.bookland.dtos;
 
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Size;
 
-public class ClientDto {
+public class UserDto {
     @Size(min = 3, message="Name must contains 3 characters at least")
     private String name;
 
@@ -24,9 +24,9 @@ public class ClientDto {
     @DecimalMin(value = "10000000", message="Please enter a valid Phone number")
     private int phoneNumber;
 
-    public ClientDto() {}
+    public UserDto() {}
 
-    public ClientDto(@Size(min = 3, message = "Name must contains 3 characters at least") String name, @Size(min = 3, message = "Surname must contains 3 characters at least") String surname, @Email(message = "Email is not valid", regexp = "(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])") String email, String password, String passwordRepeat, @Size(min = 10, max = 10, message = "Please enter a valid birthday") String birthday, @DecimalMax(value = "99999999", message = "Please enter a valid Phone number") @DecimalMin(value = "10000000", message = "Please enter a valid Phone number") int phoneNumber) {
+    public UserDto(@Size(min = 3, message = "Name must contains 3 characters at least") String name, @Size(min = 3, message = "Surname must contains 3 characters at least") String surname, @Email(message = "Email is not valid", regexp = "(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])") String email, String password, String passwordRepeat, @Size(min = 10, max = 10, message = "Please enter a valid birthday") String birthday, @DecimalMax(value = "99999999", message = "Please enter a valid Phone number") @DecimalMin(value = "10000000", message = "Please enter a valid Phone number") int phoneNumber) {
         this.name = name;
         this.surname = surname;
         this.email = email;

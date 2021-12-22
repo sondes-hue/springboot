@@ -14,7 +14,7 @@
     <div class="title">
         Sign Up
     </div>
-    <form action="#" th:action="@{/client/save}" th:object="${clientDto}" method="post">
+    <form action="#" th:action="@{/user/save}" th:object="${userDto}" method="post">
         <div class="row">
             <div class="col-6">
                 <input type="email" th:field="*{email}" placeholder="Email" class="form-control" id="email" aria-describedby="emailHelp">

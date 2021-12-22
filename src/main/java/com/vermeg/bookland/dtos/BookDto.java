@@ -1,4 +1,4 @@
-package com.vermeg.bookland.Dtos;
+package com.vermeg.bookland.dtos;
 
 public class BookDto {
     private int rank;
