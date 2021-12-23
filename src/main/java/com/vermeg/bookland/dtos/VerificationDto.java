@@ -3,6 +3,7 @@ package com.vermeg.bookland.dtos;
 public class VerificationDto {
     private String email;
     private int verification;
+    private String to;
 
     public VerificationDto(String email, int verification) {
         this.email = email;
@@ -14,6 +15,14 @@ public class VerificationDto {
     }
 
     public VerificationDto() {}
+
+    public String getTo() {
+        return to;
+    }
+
+    public void setTo(String to) {
+        this.to = to;
+    }
 
     public String getEmail() {
         return email;
