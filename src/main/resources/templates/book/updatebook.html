@@ -1,83 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-<meta charset="ISO-8859-1">
-<title>update book</title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
-integrity="sha384- 5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-<link th:href="@{/css/addcateg.css}" rel="stylesheet" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script type="text/javascript"  src="../static/js/modalupdatebook.js" th:src="@{/js/modalupdatebook.js}"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
- <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <meta charset="ISO-8859-1">
+    <title>update book</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+          integrity="sha384- 5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link th:href="@{/css/addcateg.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/js/modalupdatebook.js" th:src="@{/js/modalupdatebook.js}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/header.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/home.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/styles/global.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link th:href="@{/styles/addCateg.css}" rel="stylesheet"/>
 </head>
 <body>
-<div class="container my-5 col-sm-6">
-        <h3>Update book</h3>
-        <div class="card">
-            <div class="card-body">
-                <div class="col-sm-12">
- <form action="#" th:action="@{/book/update}" th:object="${book}" method="post" enctype="multipart/form-data">
-       
-		<div class="row">
-		<div class="form-group col-md-8">
-		<input type="hidden" th:field="*{id}"  name="idedit" id="idedit"/>
-		<label for="title" class="col-form-label">Title</label> 
-		<input type="text" th:field="*{title}" class="form-control" id="titleedit" name="titleedit" placeholder="Title" th:value="${book.title}"> 
-		<span th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="text-danger"></span>
-		</div>
-		<div class="form-group col-md-8">
-		<label for="author" class="col-form-label">Author</label> 
-		<input type="text" th:field="*{author}" class="form-control" id="authoredit" name="authoredit" placeholder="Author" th:value="${book.author}"> 
-		<span th:if="${#fields.hasErrors('author')}" th:errors="*{author}" class="text-danger"></span>
-		</div>
-		<div class="form-group col-md-8">
-		<label for="price" class="col-form-label">Price</label> 
-		<input type="text" th:field="*{price}" class="form-control" id="priceedit" name="priceedit" placeholder="Price" th:value="${book.price}"> 
-	<span th:if="${#fields.hasErrors('price')}" th:errors="*{price}" class="text-danger"></span> 
-		</div>
-		
-		<div class="form-group col-md-8">
-		<label for="pdate" class="col-form-label">Publish date</label> 
-		<input type="date" th:field="*{pdate}" class="form-control" id="pdateedit" name="pdateedit" placeholder="Publish date" th:value="${book.pdate}"> 
-		<span th:if="${#fields.hasErrors('pdate')}" th:errors="*{pdate}" class="text-danger"></span>
-		</div>
-		<div class="form-group col-md-8">
-		<label for="qte" class="col-form-label">Quantity</label> 
-		<input type="text" th:field="*{qte}" class="form-control" id="qteedit" name="qteedit" placeholder="Quantity" th:value="${book.qte}"> 
-		<span th:if="${#fields.hasErrors('qte')}" th:errors="*{qte}" class="text-danger"></span>
-		</div>
-		<div class="form-group col-md-8">
-		<label for="descrption" class="col-form-label">Description</label> 
-		<input type="text" th:field="*{description}" class="form-control" id="descriptionedit" name="descriptionedit" placeholder="Description" th:value="${book.description}">
-		<span th:if="${#fields.hasErrors('description')}" th:errors="*{description}" class="text-danger"></span>
-		</div>
-		 <div class="form-group col-md-8">
-			 <label for="categorie" class="col-formlabel">Categorie</label>
-			 <select name="categorieId" id="categorie_idedit" class="form-control">
-			 <option th:each="c: ${categories}" th:value="${c.id}" th:text="${c.nom}" />
-			</select>
-		</div>
-		<div class="form-group col-md-8">
-		 <label for="price" class="col-formlabel">Picture</label>
-		 <input class="form-control" type="file" name="files" multiple >
- 		</div>
-		<input type="hidden" name="pictureBook" th:value="${book.picture}" th:text="${book.picture}"/>
-		 <div class="modal-footer col-md-12">
-        	<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-       		<input type="submit" class="btn btn-success" value="Update ">
-      	</div>
-		</div>
-		</form>
-		</div>
-            </div>
+    <div class="navBar navBarOnTop" id="navBar" th:insert="/fragments/headers :: adminHeader"></div>
+    <div class="signUpBox" style="margin-left: 50%;
+        transform: translateX(-50%); margin-top: 100px">
+        <div class="title">
+            Update book
         </div>
+        <form action="#" th:action="@{/book/update}" th:object="${book}" method="post"
+              enctype="multipart/form-data">
+            <input type="hidden" th:field="*{id}">
+            <input type="hidden" th:field="*{categorie.id}">
+            <input type="hidden" th:field="*{picture}">
+            <div class="row">
+                <div class="col-6">
+                    <input type="hidden" th:field="*{id}" name="idedit" id="idedit"/>
+                    <input type="text" th:field="*{title}" class="form-control" id="titleedit" name="titleedit"
+                           placeholder="Title" th:value="${book.title}">
+                    <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}" class="text-danger"></span>
+                </div>
+                <div class="col-6">
+                    <input type="text" th:field="*{author}" class="form-control" id="authoredit"
+                           name="authoredit" placeholder="Author" th:value="${book.author}">
+                    <span th:if="${#fields.hasErrors('author')}" th:errors="*{author}"
+                          class="text-danger"></span>
+                </div>
+            </div>
+                <div class="row">
+                    <div class="col-6">
+                        <input type="text" th:field="*{price}" class="form-control" id="priceedit" name="priceedit"
+                               placeholder="Price" th:value="${book.price}">
+                        <span th:if="${#fields.hasErrors('price')}" th:errors="*{price}" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-6">
+                        <input type="date" th:field="*{pdate}" class="form-control" id="pdateedit" name="pdateedit"
+                               placeholder="Publish date" th:value="${book.pdate}">
+                        <span th:if="${#fields.hasErrors('pdate')}" th:errors="*{pdate}" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <input type="text" th:field="*{qte}" class="form-control" id="qteedit" name="qteedit"
+                               placeholder="Quantity" th:value="${book.qte}">
+                        <span th:if="${#fields.hasErrors('qte')}" th:errors="*{qte}" class="text-danger"></span>
+                    </div>
+                    <div class="col-6">
+                        <input type="text" th:field="*{description}" class="form-control" id="descriptionedit"
+                               name="descriptionedit" placeholder="Description" th:value="${book.description}">
+                        <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}"
+                              class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <select name="categorieId" id="categorie_idedit" class="form-control">
+                            <option th:each="c: ${categories}" th:value="${c.id}" th:text="${c.nom}"/>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <input class="form-control" type="file" name="files" multiple>
+                    </div>
+                </div>
+                <input type="hidden" name="pictureBook" th:value="${book.picture}"/>
+            <div class="buttons">
+                <input type="reset" onclick="window.location.href='/book/list'" value="Go back">
+                <input type="submit" class="btn btn-success" value="Update">
+            </div>
+        </form>
     </div>
 </body>
 </html>

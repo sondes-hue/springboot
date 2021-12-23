@@ -252,3 +252,114 @@ input[type=submit], input[type=reset]{
     width: fit-content;
     border-radius: 30px !important;
 }
+.icon{
+    margin: 0px 15px;
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    padding: 5px 20px;
+    border-radius: 10px;
+}
+.icon .bi{
+    color: var(--white);
+    margin-right: 10px;
+}
+.icon a{
+    text-decoration: none;
+    color: var(--white);
+}
+.icon a:hover{
+    color: var(--white);
+}
+.deleteIcon{
+    background-color: #923737;
+}
+.updateIcon{
+    background-color: #3a7cb8;
+}
+th, td{
+    text-align: center !important;
+}
+.editBtnBook{
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    position: absolute;
+    z-index: 1;
+    top: 0px;
+    right: 0px;
+    transition: .3s;
+}
+.editBtnBook .btns{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.bookCard:hover .editBtnBook{
+    opacity: 1;
+}
+.bookCard{
+    overflow: hidden;
+    position: relative;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 20px 0px;
+    position: relative;
+    display: flex;
+}
+.bookCard:nth-child(odd){
+    background-color: var(--listChildBgColor);
+}
+.bookCard .info{
+    max-width: 40%;
+    text-align: left;
+    margin-left: 20px;
+}
+.bookCard .extraInfo{
+    margin-left: 20px;
+    margin-top: 50px;
+    transform: translateY(-50%);
+}
+.bookCard .extraInfo .infoBox{
+    padding: 5px;
+    display: inline-block;
+    text-align: center;
+    background-color: var(--lightGreenColor);
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.1);
+}
+.bookCard .extraInfo .infoBox div{
+    margin-left: 10px;
+    display: inline-block;
+}
+.bookCard .bookImage{
+    position: relative;
+    height: 100px !important;
+    overflow: hidden;
+    width: 60px !important;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+}
+.bookCard .bookImage img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.bookCard .info .title,.bookCard .info .id{
+    vertical-align: top;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 0px;
+}
+.bookCard .info .description{
+    margin-left: 10px;
+    font-size: 15px;
+    color: var(--gray);
+}

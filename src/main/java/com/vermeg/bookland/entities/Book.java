@@ -11,7 +11,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
@@ -24,41 +26,38 @@ public class Book {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	@NotBlank(message = "Title is mandatory")
-	@Column(name = "title")
 	private String title;
 	@NotBlank(message = "Author is mandatory")
-	@Column(name = "author")
 	private String author;
-	
-	@Column(name = "price")
+	@Min(value = 1, message = "Price is mandatory")
 	private float price;
-
-	@Column(name = "pdate")
+	@Size(max = 10,min = 10, message = "Please enter a valid date")
 	private String pdate;
-	@Column(name = "qte")
+	@Min(value = 1, message = "Quantity is mandatory")
 	private int qte;
 	@NotBlank(message = "Description is mandatory")
-	@Column(name = "description")
 	private String description;
-	@Column(name = "picture")
 	private String picture;
-	
-	 @OneToMany(cascade=CascadeType.ALL, mappedBy = "book")  
-	 private List<Ligne_commande> ligne_commandes; 
 
-	
+	@OneToMany(cascade=CascadeType.ALL, mappedBy = "book")
+	private List<Ligne_commande> ligne_commandes;
+
 	/**** Many To One ****/
 	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 	@ManyToOne(fetch = FetchType.LAZY, optional = false)
 	@JoinColumn(name = "categorie_id", nullable = false)
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	private Categorie categorie;
-	
-	
-	public Book(long id, @NotBlank(message = "Title is mandatory") String title,
-			@NotBlank(message = "Author is mandatory") String author,
-			float price, String pdate, int qte,
-			@NotBlank(message = "Description is mandatory") String desc, String picture, Categorie categorie) {
+
+	public Book(long id,
+				@NotBlank(message = "Title is mandatory") String title,
+				@NotBlank(message = "Author is mandatory") String author,
+				@NotBlank(message = "Price is mandatory") float price,
+				@Size(max = 10, min = 10, message = "Please enter a valid date") String pdate,
+				@NotBlank(message = "Quantity is mandatory") int qte,
+				@NotBlank(message = "Description is mandatory") String description,
+				String picture,
+				Categorie categorie) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -66,13 +65,12 @@ public class Book {
 		this.price = price;
 		this.pdate = pdate;
 		this.qte = qte;
-		this.description = desc;
+		this.description = description;
 		this.picture = picture;
 		this.categorie = categorie;
 	}
 	
 	public Book() {
-		super();
 	}
 
 	public long getId() {

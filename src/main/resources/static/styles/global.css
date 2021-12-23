@@ -13,6 +13,7 @@
     --contactColor:#838E76;
     --inputBorderColor:#dbe0e4;
     --inputTextColor:#6d757d;
+    --listChildBgColor: #f4f8f3;
 }
 html {
     scroll-behavior: smooth;

@@ -7,7 +7,7 @@
 
     <div class="headerBox" th:fragment="clientHeader">
         <div class="logo">
-            <img height="50px" src="../images/logoo.png"></img>
+            <img height="50px" th:src="@{/images/logoo.png}"></img>
         </div>
         <div class="header">
             <ul>
@@ -45,7 +45,7 @@
 
     <div class="headerBox" th:fragment="adminHeader">
         <div class="logo">
-            <img height="50px" src="../images/logoo.png"></img>
+            <img height="50px" th:src="@{/images/logoo.png}"></img>
         </div>
         <div class="header">
             <ul>
@@ -58,13 +58,13 @@
                 <li>
                     <input type="radio" id="categoriesA" name="adminHeader">
                     <label for="categoriesA" id="categoriesALabel">
-                        <a>Categories</a>
+                        <a href="/category/list">Categories</a>
                     </label>
                 </li>
                 <li>
                     <input type="radio" id="booksA" name="adminHeader">
                     <label for="booksA" id="booksALabel">
-                        <a>Books</a>
+                        <a href="/book/list">Books</a>
                     </label>
                 </li>
                 <li>
@@ -77,7 +77,7 @@
 
     <div class="headerBox" th:fragment="homeHeader">
         <div class="logo">
-            <img height="50px" src="../images/logoo.png"></img>
+            <img height="50px" th:src="@{/images/logoo.png}"></img>
         </div>
         <div class="header">
             <ul style="margin-right: 20px">

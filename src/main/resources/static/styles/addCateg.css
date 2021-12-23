@@ -1,0 +1,30 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+
+}
+.card-title{
+    background-color:#BE9A6B;
+    color:white;
+    display:flex;
+    justify-content:  space-between;
+    padding:20px 10px;
+    text-align:center;
+}
+.btn{
+    border-radius:0;
+}
+.btn-success{
+    background-color:#58B842;
+}
+.bi-archive-fill{
+    color:red;
+    padding-right:5px;
+    font-size:20px;
+    cursor:pointer;
+}
+.bi-pencil-square{
+    color:yellow;
+    padding-left:5px;
+    font-size:20px;
+    cursor:pointer;
+}

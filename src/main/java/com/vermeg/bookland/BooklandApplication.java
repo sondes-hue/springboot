@@ -9,12 +9,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import com.vermeg.bookland.controllers.ControllerBook;
 
-
-
-
-
-
-
 @SpringBootApplication
 public class BooklandApplication {
 
