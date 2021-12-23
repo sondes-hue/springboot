@@ -1,7 +1,9 @@
 package com.vermeg.bookland.configurations;
 
+import com.vermeg.bookland.servicesImpl.CustomAuthenticationFailureHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -9,6 +11,7 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 
 import javax.sql.DataSource;
 
@@ -43,18 +46,19 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/signUp","/verify/**","/verification",
                         "/login","/signUp","/index","/home","/","/403",
-                        "/user/save").permitAll()
+                        "/user/save","/forgotPassword","/changePassword").permitAll()
                 .antMatchers("/user/**").hasAnyRole("USER","ADMIN")
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 .and().authorizeRequests().anyRequest().authenticated()
                 .and().formLogin()
                 .loginPage("/login")
-                .failureUrl("/home?error=true")
                 .usernameParameter("email") // paramètres d'authentifications login et password
                 .passwordParameter("password")
+                .failureHandler(authenticationFailureHandler())
                 .and()
                 .logout()
                 .logoutUrl("/logout")
+                .logoutSuccessUrl("/home")
                 .deleteCookies("JSESSIONID")
                 .and().exceptionHandling().accessDeniedPage("/403");
     }
@@ -64,6 +68,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         web
                 .ignoring()
                 .antMatchers("/images/**", "/styles/**");
+    }
 
+    @Bean
+    public AuthenticationFailureHandler authenticationFailureHandler() {
+        return new CustomAuthenticationFailureHandler();
     }
 }
