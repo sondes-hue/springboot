@@ -13,7 +13,7 @@ public class Commande {
 	 @ManyToOne( cascade = CascadeType.ALL )
 	 @JoinColumn( name="idUser" )
 	 private User user;
-	 private Date commandDate;
+	 private String commandDate;
 	 @OneToMany(cascade=CascadeType.ALL, mappedBy = "commande")  
 	 private List<Ligne_commande> ligne_commandes; 
 	public long getId() {
@@ -28,13 +28,13 @@ public class Commande {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	public Date getCommandDate() {
+	public String getCommandDate() {
 		return commandDate;
 	}
-	public void setCommandDate(Date commandDate) {
+	public void setCommandDate(String commandDate) {
 		this.commandDate = commandDate;
 	}
-	public Commande(long id, User user, Date commandDate) {
+	public Commande(long id, User user, String commandDate) {
 		super();
 		this.id = id;
 		this.user = user;

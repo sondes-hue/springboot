@@ -16,9 +16,9 @@ public class Ligne_commande {
 	    @JoinColumn(name = "commande_id")
 	    private Commande commande;
 
-	    private Date commandeDate;
+	    private String commandeDate;
 	    private int qte;
-		public Ligne_commande(long id, Book book, Commande commande, Date commandeDate, int qte) {
+		public Ligne_commande(long id, Book book, Commande commande, String commandeDate, int qte) {
 			super();
 			this.id = id;
 			this.book = book;
@@ -59,7 +59,7 @@ public class Ligne_commande {
 			this.commande = commande;
 		}
 
-		public Date getCommandeDate() {
+		public String getCommandeDate() {
 			return commandeDate;
 		}
 
@@ -67,7 +67,7 @@ public class Ligne_commande {
 			super();
 		}
 
-		public void setCommandeDate(Date commandeDate) {
+		public void setCommandeDate(String commandeDate) {
 			this.commandeDate = commandeDate;
 		}
 	    

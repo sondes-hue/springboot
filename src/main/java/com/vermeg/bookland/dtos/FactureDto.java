@@ -7,7 +7,7 @@ public interface FactureDto {
 public String getTitle();
 public String getPicture();
 public float getPrice();
-public Date getCommande();
+public String getCommande();
 
 
 }
