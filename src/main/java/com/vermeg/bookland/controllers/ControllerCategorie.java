@@ -17,7 +17,7 @@ import com.vermeg.bookland.repositories.CategorieRepository;
 
 
 @Controller
-@RequestMapping("category")
+@RequestMapping("/category/")
 public class ControllerCategorie {
     private final CategorieRepository categorieRepository;
 

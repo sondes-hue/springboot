@@ -45,7 +45,7 @@ import com.vermeg.bookland.repositories.*;
 
 
 @Controller
-@RequestMapping("book")
+@RequestMapping("/book/")
 public class ControllerBook {
     public static String uploadDirectory = System.getProperty("user.dir") + "/src/main/resources/static/images/uploads";
     public static String pdfDirectory = System.getProperty("user.dir") + "/src/main/resources/static/pdfs";
